@@ -55,8 +55,12 @@ export default function SetAvatar() {
     }
     
     useEffect(()=>{
-        getAvatars()
-        
+        if(!localStorage.getItem("dq-chat-user")){
+            navigate("/login")
+        }
+        else{
+            getAvatars()
+        }
     },[])
     return (
         <>
